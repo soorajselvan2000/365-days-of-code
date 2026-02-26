@@ -27,14 +27,23 @@
     <title>Reverse a String</title>
 </head>
 <body>
+    <h1>Reverse a String</h1>
+    <form action="" onsubmit="submit()">
+        <input type="text">
+        <input type="submit" value="Submit">
+    </form>
+    
     <script>
-        let input = "Hello";
-        let reversed = "";
+        function submit(){
+            let input = input.value;
+            let reversed = "";
 
-        for(let i of input){
-            reversed = i + reversed
-        }
+            for(let i of input){
+                reversed = i + reversed
+            }
         console.log(reversed)
+        }
+
     </script>
     
 </body>
