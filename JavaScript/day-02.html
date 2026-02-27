@@ -14,17 +14,31 @@
     </form>
     <p id="result"></p>
     <script>
-        function palindrome(){
+        // function palindrome(){
+        //     event.preventDefault()
+        //     userInput = document.getElementById("inputString").value;
+        //     for(i = 0; i <= userInput.length/2; i++){
+        //         if(userInput[i] != userInput[userInput.length-1-i]){
+        //             document.getElementById('result').innerHTML = "It is not a Palindrome";
+        //         }
+        //         else{
+        //             document.getElementById('result').innerHTML = "It is a Palindrome";
+        //         }
+        //     }
+        // }
+
+         function palindrome(){
             event.preventDefault()
             userInput = document.getElementById("inputString").value;
+            isPalindrome = true;
             for(i = 0; i <= userInput.length/2; i++){
                 if(userInput[i] != userInput[userInput.length-1-i]){
-                    document.getElementById('result').innerHTML = "It is not a Palindrome";
-                }
-                else{
-                    document.getElementById('result').innerHTML = "It is a Palindrome";
+                    isPalindrome = false;
+                    break
                 }
             }
+            document.getElementById('result').innerHTML =
+            isPalindrome ? `The word '${userInput}' is <b>Palindrome<b>` : `The word '${userInput}' is not a <b>Palindrome</b>`
         }
         function clearInput(){
             document.getElementById('result').innerHTML = ''
