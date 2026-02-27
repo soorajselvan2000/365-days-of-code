@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome</title>
+</head>
+<body>
+    <h1>Palindrome checking</h1>
+    <form action="" onsubmit="paliandrome()">
+        <label for="inputString">Enter the word: </label><br>
+        <input type="text" id="inputString"><br><br>
+        <input type="Submit" value="Check">
+    </form>
+    <p id="result"></p>
+    <script>
+        function paliandrome(){
+            event.preventDefault()
+            userInput = document.getElementById("inputString").value;
+            for(i = 0; i <= userInput.length/2; i++){
+                if(userInput[i] != userInput[userInput.length-1-i]){
+                    document.getElementById('result').innerHTML = "It is not a Palindrome";
+                }
+                else{
+                    document.getElementById('result').innerHTML = "It is a Palindrome";
+                }
+            }
+        }
+        
+    </script>
+    
+</body>
+</html>
