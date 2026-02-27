@@ -7,14 +7,14 @@
 </head>
 <body>
     <h1>Palindrome checking</h1>
-    <form action="" onsubmit="paliandrome()">
+    <form action="" onsubmit="palindrome()">
         <label for="inputString">Enter the word: </label><br>
-        <input type="text" id="inputString"><br><br>
+        <input type="text" id="inputString" oninput="clearInput()"><br><br>
         <input type="Submit" value="Check">
     </form>
     <p id="result"></p>
     <script>
-        function paliandrome(){
+        function palindrome(){
             event.preventDefault()
             userInput = document.getElementById("inputString").value;
             for(i = 0; i <= userInput.length/2; i++){
@@ -25,6 +25,9 @@
                     document.getElementById('result').innerHTML = "It is a Palindrome";
                 }
             }
+        }
+        function clearInput(){
+            document.getElementById('result').innerHTML = ''
         }
         
     </script>
